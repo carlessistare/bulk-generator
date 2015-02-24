@@ -1,6 +1,7 @@
 "use strict"
 
 fs = require 'fs'
+ProgressBar = require 'progress'
 
 outputformat = require "./output-format"
 linegenerator = require "./line-generator"
@@ -11,7 +12,10 @@ generateBulk = (num_lines, doc_format, output_format = "json"
 
   fd = null
 
+  bar = new ProgressBar('[:bar] :percent :etas', { width: 50,total: num_lines })
+
   for i in [0..num_lines]
+    bar.tick()
     line = linegenerator.generateLine doc_format
     formated_line = ""
     if output_format is "json"

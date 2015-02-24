@@ -4,7 +4,8 @@
   "description": "bulk-generator",
   "main": "lib/bulk-generator.coffee",
   "dependencies": {
-    "coffee-script": "^1.7.1"
+    "coffee-script": "^1.7.1",
+    "progress": "^1.1.8"
   },
   "repository": {
     "type": "git",
