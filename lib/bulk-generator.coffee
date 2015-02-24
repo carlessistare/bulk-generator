@@ -30,7 +30,7 @@ generateBulk = (num_lines, doc_format, output_format = "json"
       outputsupport.outputSTDOUT(formated_line, repeat_lines)
     else if output_support is "file"
       fd = fs.openSync output_support_opt, "w" unless fd?
-      outputsupport.outputFILE(formated_line, fd, repeat_lines)
+      outputsupport.outputFILE(formated_line, output_support_opt, repeat_lines)
 
   if df?
     fs.close(fd)
