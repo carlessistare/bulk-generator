@@ -1,0 +1,26 @@
+{
+  "name": "bulk-generator",
+  "version": "0.0.1",
+  "description": "bulk-generator",
+  "main": "lib/bulk-generator.coffee",
+  "dependencies": {
+    "coffee-script": "^1.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fengmk2/bulk-generator.git"
+  },
+  "keywords": [
+    "bulk-generator"
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "author": "Carles Sistare <carles.sistare@gmail.com>",
+  "devDependencies": {
+    "chai": "^2.1.0",
+    "grunt": "^0.4.5",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.1.0"
+  }
+}
