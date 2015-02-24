@@ -3,6 +3,7 @@
 
 ```bash
 $ npm install bulk-generator
+$ npm install "https://github.com/carlessistare/bulk-generator/tarball/master"
 ```
 
 ## Usage
@@ -25,6 +26,9 @@ var line_format = {
   field5:
     type: "timestamp"
     limits: [ 1424425310, 1424525310 ]
+  field6:
+    type: "string"
+    force: "Force Value"
 };
 
 bulkgenerator.generateBulk(10, line_format, "json", "file", "~/bulk-test.txt")

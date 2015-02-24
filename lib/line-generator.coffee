@@ -39,20 +39,23 @@ field5:
 generateLine = (line_format) ->
   line = {}
   for field_name, format of line_format
-    line[field_name] = switch format.type
-      when "int"
-        getRandomInt format.limits[0], format.limits[1]
-      when "string"
-        if format["length"]?
-          getRandomStringLength format["length"]
-        else if format["options"]?
-          getRandomStringOptions format["options"]
-        else
-          ""
-      when "boolean"
-        getRandomBoolean()
-      when "timestamp"
-        getRandomTimestamp format.limits[0], format.limits[1]
+    line[field_name] = if format.force?
+      format.force
+    else
+      switch format.type
+        when "int"
+          getRandomInt format.limits[0], format.limits[1]
+        when "string"
+          if format["length"]?
+            getRandomStringLength format["length"]
+          else if format["options"]?
+            getRandomStringOptions format["options"]
+          else
+            ""
+        when "boolean"
+          getRandomBoolean()
+        when "timestamp"
+          getRandomTimestamp format.limits[0], format.limits[1]
   line
 
 module.exports =
