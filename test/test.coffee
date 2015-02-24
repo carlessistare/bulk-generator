@@ -45,7 +45,7 @@ describe 'Bulk generator', ->
         type: "timestamp"
         limits: [ 1424425310, 1424525310 ]
 
-  xit 'test a bulk file', ->
+  it 'test a bulk file', ->
     bulkgenerator.generateBulk 10,
     {
       field1:
@@ -62,4 +62,4 @@ describe 'Bulk generator', ->
       field5:
         type: "timestamp"
         limits: [ 1424425310, 1424525310 ]
-    }, "json", "file", "~/bulk-test.txt"
+    }, "json", "file", "/Users/carles/bulk-test.txt"
